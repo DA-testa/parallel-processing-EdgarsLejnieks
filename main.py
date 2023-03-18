@@ -20,7 +20,7 @@ def parallel_processing(n, m, data):
                 
         timer += 1
         for thread in range(n):
-            processor[thread] = processor[thread] - 1
+            processor[thread] = int(processor[thread]) - 1
 
         if len(output) == 0:
             break

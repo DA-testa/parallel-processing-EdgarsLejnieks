@@ -12,7 +12,7 @@ def parallel_processing(n, m, data):
         processor[thread] = 0
 
     timer = 0
-    while(True):
+    while(len(data) != 0):
         for thread in range(n):
             if processor[thread] == 0:
                 processor.update({thread:data.pop(0)})
@@ -21,9 +21,6 @@ def parallel_processing(n, m, data):
         timer += 1
         for thread in range(n):
             processor[thread] = int(processor[thread]) - 1
-
-        if len(output) == 0:
-            break
 
     return output
 
@@ -40,11 +37,14 @@ def main():
     # second line - data 
     # data - contains m integers t(i) - the times in seconds it takes any thread to process i-th job
     data = secondline.split()
-    print (n, m,"\n", data)
+    # print (n, m,"\n", data)
 
     result = parallel_processing(n,m,data)
     
     # TODO: print out the results, each pair in it's own line
+
+    for i in result:
+        print(i)
 
 
 

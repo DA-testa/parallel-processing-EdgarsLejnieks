@@ -44,7 +44,7 @@ def main():
     # TODO: print out the results, each pair in it's own line
 
     for i in result:
-        print(i)
+        print(str(i[0])+" "+str(i[1])+"\r\n")
 
 
 
